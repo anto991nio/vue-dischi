@@ -14,9 +14,17 @@
     <div id="app">
 
         <h1>My albums</h1>
+
         <div class="albums-container">
-            <div  v-for="albums of listAlbums">
-                {{albums}}
+            <div class="albums" v-for="element of listAlbums">
+            <img :src="element.poster" alt="">
+            <h3>{{element.title}}</h3>
+            <h3>{{element.author}}</h3>
+            <h3>{{element.genre}}</h3>
+            <h3>{{element.year}}</h3>
+
+
+
             </div>
         </div>
     </div>
