@@ -13,6 +13,20 @@ new Vue({
     },
 
     methods:{
+        sort(list){
+            list.sort(function(albumA,albumB){
+                const dateA = moment(albumA.year,"YYYY");
+                const dateB = moment(albumB.year, "YYYY");
+
+                if(dateA.isAfter(dateB)){
+                    return 1;
+                }else if(dateA.isBefore(dateB)){
+                    return -1;
+                }
+                return 0;
+            })
+            return list
+        }
     
     }
 
