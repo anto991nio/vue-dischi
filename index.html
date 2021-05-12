@@ -13,18 +13,15 @@
 <body>
     <div id="app">
 
-        <h1>My albums</h1>
+        <h1>MyMusicApp</h1>
 
         <div class="albums-container">
             <div class="albums" v-for="element of listAlbums">
             <img :src="element.poster" alt="">
-            <h3>{{element.title}}</h3>
-            <h3>{{element.author}}</h3>
-            <h3>{{element.genre}}</h3>
-            <h3>{{element.year}}</h3>
-
-
-
+            <p><strong>{{element.title}}</strong></p>
+            <p>{{element.author}}</p>
+            <span> - {{element.genre}} - </span>
+            <span>{{element.year}} - </span>
             </div>
         </div>
     </div>
