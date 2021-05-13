@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,25 +12,40 @@
 
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
 
-        <h1>MyMusicApp</h1>
+
+        <nav>
+            <h1>MyMusicApp</h1>
+            <select @change="onSelectChange" v-model="genreToFilter">
+                <option value="">Tutti i generi</option>
+                <option :value="genre" v-for="genre in genrLista">{{genre}}</option>
+            </select>
+
+        </nav>
+
+
 
         <div class="albums-container">
-            <div class="albums" v-for="element of sort(listAlbums)">
-            <img :src="element.poster" alt="">
-            <p><strong>{{element.title}}</strong></p>
-            <p>{{element.author}}</p>
-            <span> - {{element.genre}} - </span>
-            <span>{{element.year}} - </span>
+            <div class="albums" v-for="element of filteredData">
+                <img :src="element.poster" alt="">
+                <p><strong>{{element.title}}</strong></p>
+                <p>{{element.author}}</p>
+                <span> - {{element.genre}} - </span>
+                <span>{{element.year}} - </span>
             </div>
         </div>
+
     </div>
-    
+
+
+
 
 
 
     <script src="app.js"></script>
 </body>
+
 </html>
